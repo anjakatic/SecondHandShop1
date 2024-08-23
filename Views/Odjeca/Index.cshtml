@@ -1,0 +1,121 @@
+﻿@using SecondHandShop1.Models
+@model IEnumerable<SecondHandShop1.Models.Odjeca>
+
+@{
+    ViewBag.Title = "Popis odjece";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Popis odjece</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Novo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterijalOdjeca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VelicinaOdjeca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Boje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VrstaOdjece)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Novo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterijalOdjeca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VelicinaOdjeca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Boje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VrstaOdjece)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdOdjeca }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdOdjeca }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdOdjeca }) |
+                @Html.ActionLink("Dodaj u kosaricu", "", new { id = item.IdOdjeca })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts {
+    <style>
+        /* Stilovi za toast */
+        .plava {
+            color: blue;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            // Funkcija za prikazivanje toasta
+            function showToast() {
+                // Bootstrap toast
+                var toast = `
+                                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="true">
+                                    <div class="toast-header">
+                                        <strong class="mr-auto">Obavijest</strong>
+
+                                    </div>
+                                    <div class="toast-body">
+                                        Dodano u košaricu
+                                    </div>
+                                </div>`;
+
+                // Dodaj toast u body i prikaži
+                $(document.body).append(toast);
+                $('.toast').toast('show');
+            }
+
+            // Klik na gumb "Dodaj u košaricu"
+            $('.plava').click(function () {
+                showToast();
+
+            });
+
+            // Zatvaranje toasta kada se klikne "X"
+            $(document).on('click', '.toast .close', function () {
+                $(this).closest('.toast').toast('hide');
+            });
+
+            // Ukloni toaste nakon što se zatvore
+            $(document).on('hidden.bs.toast', '.toast', function () {
+                $(this).remove();
+            });
+        });
+    </script>
+}

@@ -1,0 +1,75 @@
+﻿@model SecondHandShop1.Models.Nakit
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nakit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Novo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Novo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterijalNakit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterijalNakit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VelicinaNakita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VelicinaNakita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Boje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Boje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cijena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VrstaNakita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VrstaNakita)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdNakit }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

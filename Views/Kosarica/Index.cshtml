@@ -1,0 +1,207 @@
+﻿@model SecondHandShop1.Models.IndexViewModel
+
+
+@{
+    ViewBag.Title = "Kosarica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" style="background-color: mediumslateblue">
+    <h2>Kosarica</h2>
+
+    <div class="row">
+        @if (Model.Odjeca != null)
+        {
+            <h3 style="color: aquamarine">Odjeca</h3>
+            <table class="table">
+                <tr>
+                    <th>
+                        Vrsta odjece
+                    </th>
+                    <th>
+                        Novo
+                    </th>
+                    <th>
+                        Materijal odjece
+                    </th>
+                    <th>
+                        Velicina odjece
+                    </th>
+                    <th>
+                        Boje
+                    </th>
+                    <th>
+                        Spol
+                    </th>
+                    <th>
+                        Cijena
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.Odjeca)
+                {
+                    if (item.U_kosarici == true)
+                    {
+                        <tr>
+                            <td>
+                                <strong>
+                                    @Html.DisplayFor(modelItem => item.VrstaOdjece)
+                                </strong>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Novo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaterijalOdjeca)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VelicinaOdjeca)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Boje)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Spol)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cijena)
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        }
+
+        @if (Model.Nakit != null)
+        {
+            <h3 style="color: aquamarine">Nakit</h3>
+            <table class="table">
+                <tr>
+                    <th>
+                        Vrsta nakita
+                    </th>
+                    <th>
+                        Novo
+                    </th>
+                    <th>
+                        Materijal nakita
+                    </th>
+                    <th>
+                        Velicina nakita
+                    </th>
+                    <th>
+                        Boje
+                    </th>
+                    <th>
+                        Spol
+                    </th>
+                    <th>
+                        Cijena
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.Nakit)
+                {
+                    if (item.U_kosarici == true)
+                    {
+                        <tr>
+                            <td>
+                                <strong>
+                                    @Html.DisplayFor(modelItem => item.VrstaNakita)
+                                </strong>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Novo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaterijalNakit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VelicinaNakita)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Boje)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Spol)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cijena)
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        }
+
+
+        @if (Model.Obuca != null)
+        {
+            <h3 style="color: aquamarine">Obuca</h3>
+            <table class="table">
+                <tr>
+                    <th>
+                        Vrsta obuce
+                    </th>
+                    <th>
+                        Novo
+                    </th>
+                    <th>
+                        Materijal obuce
+                    </th>
+                    <th>
+                        Velicina obuce
+                    </th>
+                    <th>
+                        Boje
+                    </th>
+                    <th>
+                        Spol
+                    </th>
+                    <th>
+                        Cijena
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.Obuca)
+                {
+                    if (item.U_kosarici == true)
+                    {
+                        <tr>
+                            <td>
+                                <strong>
+                                    @Html.DisplayFor(modelItem => item.VrstaObuce)
+                                </strong>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Novo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaterijalObuca)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VelicinaObuce)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Boje)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Spol)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cijena)
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        }
+    </div>
+</div>
